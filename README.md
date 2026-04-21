@@ -1,4 +1,3 @@
-
 # StockSight — Inventory Analytics Dashboard
 
 A full-stack inventory analytics dashboard using Python (Flask), MySQL, and a modern HTML/JS frontend.
@@ -13,6 +12,12 @@ A full-stack inventory analytics dashboard using Python (Flask), MySQL, and a mo
 
 ---
 
+
+## Dashboard Preview
+
+![Dashboard - Analytics Overview](images/Dashboard%20-%20Analytics%20Overview%20.png)
+
+---
 
 ## Project Structure
 
