@@ -22,7 +22,7 @@ A full-stack inventory analytics dashboard using Python (Flask), MySQL, and a mo
 ## Project Structure
 
 ```
-PY-MYSQL/
+stocksight/
 ├── sql/
 │   └── schema.sql          # DB schema + seed data
 ├── backend/
@@ -31,7 +31,7 @@ PY-MYSQL/
 ├── frontend/
 │   └── index.html          # Single-page dashboard
 ├── docker-compose.yml      # Multi-service orchestration
-├── dockerfile              # Backend Dockerfile
+├── Dockerfile              # Backend Dockerfile
 └── README.md
 ```
 
