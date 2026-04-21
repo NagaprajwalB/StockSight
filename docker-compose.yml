@@ -4,12 +4,13 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: 1475369
-      MYSQL_DATABASE: inventory_db
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
     ports:
       - "3307:3306"
     volumes:
       - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - mysql_data:/var/lib/sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
@@ -22,9 +23,9 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: 3306
-      DB_NAME: inventory_db
-      DB_USER: root
-      DB_PASSWORD: 1475369
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
     depends_on:
       db:
         condition: service_healthy
@@ -39,3 +40,5 @@ services:
       - ./frontend:/usr/share/nginx/html
     depends_on:
       - backend
+volumes:
+  mysql_data:
