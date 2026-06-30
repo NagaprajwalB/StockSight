@@ -19,9 +19,9 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 dir('backend') {
-                    bat '''
-                        python -m venv venv
-                        call venv\\Scripts\\activate.bat
+                    sh '''
+                        python3 -m venv venv
+                        . venv/bin/activate
                         pip install --no-cache-dir -r requirements.txt
                     '''
                 }
